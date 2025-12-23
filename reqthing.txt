@@ -1,0 +1,5 @@
+streamlit==1.22.0
+opencv-python-headless
+numpy==1.24.3
+tensorflow==2.10.1
+protobuf<3.20
