@@ -78,8 +78,8 @@ st.markdown("""
     <div class="links">
         <a href="?page=predict">Predict</a>
         <a href="?page=compare">Compare</a>
-        <a href="https://github.com/cornybug2" target="_blank">GitHub</a>
-        <a href="#">By Vidit Srivastava</a>
+        <a href="https://github.com/avsharma01" target="_blank">GitHub</a>
+        <a href="#">By Anant Vaibhav</a>
     </div>
 </div>
 <div class="main">
@@ -280,7 +280,7 @@ if page == "predict":
         video_path = save_uploaded_file(video_file)
         show_video(video_path)
 
-        frames = frames_from_video_file(video_path, 30)
+        frames = frames_from_video_file(video_path, 16)
 
         with st.spinner("Loading model..."):
             pass  # just display message, don't reload anything
@@ -308,7 +308,7 @@ elif page == "compare":
         if video1:
             video1_path = save_uploaded_file(video1)
             show_video(video1_path)
-            frames1 = frames_from_video_file(video1_path, 30)
+            frames1 = frames_from_video_file(video1_path, 16)
             with st.spinner("Analysing first video..."):
                 pred1 = model.predict(np.expand_dims(frames1, axis=0))
             idx1 = np.argmax(pred1, axis=1)[0]
@@ -321,7 +321,7 @@ elif page == "compare":
         if video2:
             video2_path = save_uploaded_file(video2)
             show_video(video2_path)
-            frames2 = frames_from_video_file(video2_path, 30)
+            frames2 = frames_from_video_file(video2_path, 16)
             with st.spinner("Analysing second video..."):
                 pred2 = model.predict(np.expand_dims(frames2, axis=0))
             idx2 = np.argmax(pred2, axis=1)[0]
