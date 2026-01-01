@@ -135,10 +135,9 @@ B.Tech Computer Science (Artificial Intelligence & Machine Learning)
 
 ⭐ Acknowledgements
 
-TensorFlow & Keras
+- TensorFlow & Keras
+- Streamlit
+- OpenCV
 
-Streamlit
+⭐ If you found this project interesting, consider giving it a star! </p> 
 
-OpenCV
-
-<p align="center"> ⭐ If you found this project interesting, consider giving it a star! </p> ```+
