@@ -262,6 +262,27 @@ if "model_loaded" not in st.session_state:
 else:
     model = _load_model_singleton()
 
+
+def styled_prediction(text):
+    st.markdown(
+        f"""
+        <div style="
+            background-color: #1b5e20;
+            color: #ffffff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        ">
+            {text}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 # -----------------------------------------------------
 # Router
 # -----------------------------------------------------
@@ -291,7 +312,8 @@ if page == "predict":
         label_idx = np.argmax(pred, axis=1)[0]
         label = list(classes.keys())[list(classes.values()).index(label_idx)]
         conf = pred[0][label_idx] * 100
-        st.success(classy_sentence(label, conf))
+        styled_prediction(classy_sentence(label, conf))
+
 
 # -----------------------------------------------------
 # Compare Page
@@ -314,7 +336,8 @@ elif page == "compare":
             idx1 = np.argmax(pred1, axis=1)[0]
             class1 = list(classes.keys())[list(classes.values()).index(idx1)]
             conf1 = pred1[0][idx1] * 100
-            st.success(classy_sentence(class1, conf1))
+            styled_prediction(classy_sentence(class1, conf1))
+
 
     with col2:
         video2 = st.file_uploader("Second video", type=["mp4", "avi", "mov"], key="vid2")
@@ -327,7 +350,8 @@ elif page == "compare":
             idx2 = np.argmax(pred2, axis=1)[0]
             class2 = list(classes.keys())[list(classes.values()).index(idx2)]
             conf2 = pred2[0][idx2] * 100
-            st.success(classy_sentence(class2, conf2))
+            styled_prediction(classy_sentence(class2, conf2))
+
 
     if st.button("Compare Videos"):
         if video1 and video2 and class1 == class2:
@@ -336,7 +360,8 @@ elif page == "compare":
             f2 = feature_model.predict(np.expand_dims(frames2, axis=0))
             dot = np.dot(f1, f2.T)
             sim = (dot / (np.linalg.norm(f1) * np.linalg.norm(f2)))[0][0] * 100
-            st.success(f"Both are **{class1}** shots! Similarity: {sim:.2f}%")
+            styled_prediction(f"Both are {class1} shots! Similarity: {sim:.2f}%")
+
         elif class1 and class2 and class1 != class2:
             st.warning("Different shot types detected — similarity skipped.")
         else:
