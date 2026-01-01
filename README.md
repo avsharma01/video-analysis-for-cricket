@@ -107,7 +107,6 @@ streamlit run app.py
 
 
 Open in browser:
-
 http://localhost:8501
 
 🐳 Run Using Docker
@@ -115,23 +114,17 @@ docker build -t crickvision .
 docker run -p 8501:8501 crickvision
 
 📌 Learning Outcomes
-
-Video-based deep learning using CNN-RNN architectures
-
-Efficient frame extraction and preprocessing
-
-Building interactive ML web applications
-
-Dockerizing and deploying ML models
-
-Handling real-world deployment constraints
+- Video-based deep learning using CNN-RNN architectures
+- Efficient frame extraction and preprocessing
+- Building interactive ML web applications
+- Dockerizing and deploying ML models
+- Handling real-world deployment constraints
 
 👤 Author
 
 Anant Vaibhav
 B.Tech Computer Science (Artificial Intelligence & Machine Learning)
-
-🔗 GitHub: https://github.com/avsharma01
+🔗 Email: anantvaibhavofficial@gmail.com
 
 ⭐ Acknowledgements
 
@@ -140,4 +133,5 @@ B.Tech Computer Science (Artificial Intelligence & Machine Learning)
 - OpenCV
 
 ⭐ If you found this project interesting, consider giving it a star! </p> 
+
 
