@@ -132,6 +132,7 @@ B.Tech Computer Science (Artificial Intelligence & Machine Learning)
 - Streamlit
 - OpenCV
 
-⭐ If you found this project interesting, consider giving it a star! </p> 
+⭐ If you found this project interesting, consider giving it a star! 
+
 
 
