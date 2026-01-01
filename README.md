@@ -1,60 +1,145 @@
-Video Analytics for Cricket
-Purpose
+🏏 CrickVision – AI-Powered Cricket Shot Analysis
 
-Classify cricket shots from video input using a trained deep learning model and a Streamlit interface.
+CrickVision is a deep learning–based cricket shot analysis system that classifies cricket shots directly from video inputs.
+It uses a combination of computer vision and sequence modeling to understand both spatial and temporal patterns in cricket strokes.
 
-Structure
+The project is deployed as an interactive web application and demonstrates an end-to-end ML workflow — from model design to cloud deployment.
 
-src/app: UI layer.
+🚀 Live Demo
 
-src/core: model loading, inference, preprocessing, postprocessing.
+🔗 Web App: https://crickvision-docker.onrender.com/
 
-src/utils: video and file I/O.
+🧠 Key Features
 
-src/config: paths and constants.
+🎥 Video-based cricket shot classification
 
-models: stored weights.
+🏏 Supports 10 different cricket shots
 
-data/TestSamples: sample videos.
+🧠 CNN + RNN architecture for spatial & temporal learning
 
-notebooks: experimentation artifacts.
+📊 Confidence-based predictions with commentary-style output
 
-tests: verification scripts.
+🌐 Interactive Streamlit web interface
 
-app.py: entry point.
+📦 Dockerized and deployed on cloud
 
-Pipeline
+🏏 Supported Shot Types
 
-Load video.
+Cover
 
-Extract and normalize frames.
+Defense
 
-Run model inference.
+Flick
 
-Map logits to class labels.
+Hook
 
-Return structured output to UI.
+Late Cut
 
-Requirements
+Lofted
 
-Python 3.10+
-TensorFlow
-OpenCV
-Streamlit
-NumPy
+Pull
 
-Usage
+Square Cut
 
-Install dependencies:
-pip install -r requirements.txt
+Straight
 
-Start interface:
+Sweep
+
+🏗️ Model Architecture
+
+CNN Backbone: EfficientNetB0 (pretrained on ImageNet)
+
+Temporal Modeling: GRU layers for sequence learning
+
+Input: Extracted video frames
+
+Output: Softmax probabilities over 10 shot classes
+
+The model processes video frames sequentially to capture motion dynamics, making it suitable for video-based action recognition.
+
+🛠 Tech Stack
+
+Programming Language: Python
+
+Deep Learning: TensorFlow / Keras
+
+Computer Vision: OpenCV
+
+Web Framework: Streamlit
+
+Deployment: Docker, Cloud Hosting
+
+📁 Project Structure
+video-analysis-for-cricket/
+│
+├── app.py              # Streamlit web application
+├── model.h5            # Trained deep learning model
+├── reqthing.txt        # Project dependencies
+├── Dockerfile          # Docker configuration
+├── README.md           # Project documentation
+└── runtime.txt         # Python runtime specification
+
+⚙️ How It Works
+
+User uploads a cricket shot video
+
+Video frames are extracted and preprocessed
+
+Frames are passed through EfficientNet for feature extraction
+
+GRU layers model temporal motion patterns
+
+Model predicts the shot type with confidence score
+
+Result is displayed with commentary-style description
+
+▶️ Run Locally
+1️⃣ Clone the Repository
+git clone https://github.com/avsharma01/video-analysis-for-cricket.git
+cd video-analysis-for-cricket
+
+2️⃣ Create & Activate Virtual Environment (Python 3.10)
+python -m venv venv
+venv\Scripts\activate   # Windows
+
+3️⃣ Install Dependencies
+pip install -r reqthing.txt
+
+4️⃣ Run the App
 streamlit run app.py
 
-Model
 
-Stored at models/model.h5. Expects preprocessed frames of the defined input shape.
+App will open at:
 
-Notes
+http://localhost:8501
 
-Notebook contains experimental logic. Source directory holds production logic.
+🐳 Run Using Docker
+docker build -t crickvision .
+docker run -p 8501:8501 crickvision
+
+📌 Learning Outcomes
+
+Video-based deep learning using CNN-RNN architectures
+
+Efficient frame extraction and preprocessing
+
+Building interactive ML web apps
+
+Dockerizing and deploying ML models
+
+Bridging the gap between model training and real-world usage
+
+👤 Author
+
+Anant Vaibhav
+B.Tech Computer Science (Artificial Intelligence & Machine Learning)
+
+🔗 GitHub: https://github.com/avsharma01
+
+⭐ Acknowledgements
+
+TensorFlow & Keras
+
+Streamlit
+
+OpenCV
