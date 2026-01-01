@@ -17,16 +17,16 @@ The project is deployed as an interactive web application and demonstrates an en
 📦 Dockerized and deployed on cloud
 
 🏏 Supported Shot Types
--Cover
--Defense
--Flick
--Hook
--Late Cut
--Lofted
--Pull
--Square Cut
--Straight
--Sweep
+--Cover
+--Defense
+--Flick
+--Hook
+--Late Cut
+--Lofted
+--Pull
+--Square Cut
+--Straight
+--Sweep
 
 🏗️ Model Architecture
 -CNN Backbone: EfficientNetB0 (pretrained on ImageNet)
@@ -101,4 +101,5 @@ B.Tech Computer Science (Artificial Intelligence & Machine Learning)
 -TensorFlow & Keras
 -Streamlit
 -OpenCV
+
 
