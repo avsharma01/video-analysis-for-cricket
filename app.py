@@ -79,7 +79,8 @@ st.markdown("""
         <a href="?page=predict">Predict</a>
         <a href="?page=compare">Compare</a>
         <a href="https://github.com/avsharma01" target="_blank">GitHub</a>
-        <a href="#">By Anant Vaibhav</a>
+        <a href="https://linkedin.com/in/anant-vaibhav-b444632a2" target="_blank">Linkedin</a>
+        <a href="https://anant-portfolio-rose.vercel.app/#home" target="_blank">By Anant Vaibhav</a>
     </div>
 </div>
 <div class="main">
