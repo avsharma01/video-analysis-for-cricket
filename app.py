@@ -6,6 +6,10 @@ from tensorflow.keras import models, layers
 from tensorflow.keras.applications import EfficientNetB0
 import tempfile, shutil, base64, random
 
+
+if "uploaded_video" not in st.session_state:
+    st.session_state.uploaded_video = None
+
 # -----------------------------------------------------
 # PAGE CONFIG
 # -----------------------------------------------------
@@ -296,9 +300,13 @@ if page == "predict":
     st.title("🏏 Shot Prediction")
     st.write("Upload a video and watch CrickVision describe the shot like a commentator.")
 
-    video_file = st.file_uploader("Upload your cricket shot video", type=["mp4", "avi", "mov"], key="predict")
-    if video_file:
-        video_path = save_uploaded_file(video_file)
+    video_file = st.file_uploader("Upload your cricket shot video", type=["mp4", "avi", "mov"])
+    
+    if video_file is not None:
+    st.session_state.uploaded_video = video_file
+    if st.session_state.uploaded_video is not None:
+    video_path = save_uploaded_file(st.session_state.uploaded_video)
+
         show_video(video_path)
 
         frames = frames_from_video_file(video_path, 30)
